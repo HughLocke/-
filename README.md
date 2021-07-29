@@ -36,3 +36,10 @@
 2.新的性质是,武将的价值往往是决定账号价值的主要因素,能够区分开高价格账号和低价账号的决定因素也是武将的数目,回归树初期切分数据集的依据是核心武将的红度  
 例如第一次切分,查看的是账号是否拥有满红吕蒙  
 第二次切分,查看的是账号是否拥有四红皇甫嵩
+
+----------------2021.7.29---------------  
+更新了数据获取的接口，简化了使用方法，新的使用方法如下
+1. 网页端登陆藏宝阁，在此页面https://stzb.cbg.163.com/cgi/api/query?view_loc=equip_list&platform_type=1&order_by=selling_time%20DESC&page=1打开检查，刷新后从Request包中得到当前的cookie
+2. 将cookie填入Get_Account.py的Download函数中替换
+3. 删除account_data文件夹中的所有账号信息，运行Get_Account.py,获取最新的所有账号数据
+4. 运行general_analyze.py,解析账号结果,可根据需要在代码中修改字典和账号阈值

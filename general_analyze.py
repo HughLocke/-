@@ -37,6 +37,7 @@ class Account:
         #return self.score > other.score  #综合分最高
         #return self.key_num > ohter.key_num #关键武将个数最多
 Account_List = []
+
 def general_value(file_name, Account_info):
 
     global Account_List
@@ -44,7 +45,7 @@ def general_value(file_name, Account_info):
     info = info["equip"]
     account = Account()
     account.price = int(info["price"]) / 100
-    if(account.price > 18000):
+    if(account.price > 18000): #账号价格阈值, 可根据需要改动
         return
 
     info = info["equip_desc"]
